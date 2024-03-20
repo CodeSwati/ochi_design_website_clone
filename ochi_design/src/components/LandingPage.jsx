@@ -1,15 +1,21 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { FaArrowUpLong } from "react-icons/fa6";
 
-function LandingPage() {
+function LandingPage(){
     return(
-      <div className='w-full h-screen bg-zinc-900 pt-1'>
+      <div data-scroll data-scroll-section data-scroll-speed="-0.8" className='w-full h-screen bg-zinc-900 pt-1'>
         <div className='textstructure mt-40 px-20'>
           {["We Create","EYE-OPENING","PRESENTATIONS"].map((item,index)=>
              <div className='masker'>
                 <div className='w-fit flex items-end overflow-hidden'>
                   {index===1 && (
-                  <div className='mr-[1.2vw] w-[9vw] h-[5vw] rounded-md bg-[url("https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg")] bg-cover bg-center'></div>
+                  <motion.div 
+                     initial={{width:"0"}} 
+                     animate={{width:"9vw"}} 
+                     transition={{ease:[0.76,0,0.24,1] , duration: 1}}
+                   className='mr-[1vw] w-[9vw] h-[5vw] rounded-md bg-[url("https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg")] 
+                   bg-cover bg-center'></motion.div>
                   )}
                   <h1 className='font-["Founders Grotesk"] uppercase text-[7vw] h-full font-bold  
                   leading-[6vw] tracking-tighter'>{item}</h1>
